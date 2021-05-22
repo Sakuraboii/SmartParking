@@ -12,7 +12,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
-@Table(name = "orders")
+@Table(name = "order")
 public class Order extends BaseEntity {
 
     @NotNull
@@ -30,6 +30,10 @@ public class Order extends BaseEntity {
     @NotNull
     @Column(name = "parkingTime")
     private String parkingTime;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable=false)
+    private User user;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "park_id")

@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Getter
 @Setter
-@Table(name = "VehicleType")
+@Table(name = "cars")
 public class VehicleType extends BaseEntity {
 
     @NotNull
@@ -28,7 +28,7 @@ public class VehicleType extends BaseEntity {
     @Column(name = "carNumbers")
     private String carNumbers;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinColumn(name = "user_id")
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable=false)
     private User userMachine;
 }

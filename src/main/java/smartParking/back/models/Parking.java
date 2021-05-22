@@ -27,6 +27,6 @@ public class Parking extends BaseEntity {
     @Column(name = "price")
     private int price;
 
-    @OneToMany(mappedBy = "parking", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "park", fetch = FetchType.LAZY)
     private List<Order> orders;
 }

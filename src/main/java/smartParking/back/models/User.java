@@ -30,7 +30,7 @@ public class User extends BaseEntity {
     @Column(name = "driverLicenseNumber")
     private int driverLicenseNumber;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "userMachine", fetch = FetchType.LAZY)
     private List<VehicleType> cars;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
